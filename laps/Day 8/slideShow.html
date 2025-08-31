@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .slide {
+        width: 600px;
+        display: block;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+      }
+      #img {
+        height: 350px;
+        width: 100%;
+        display: block;
+        margin-bottom: 1px;
+        background-color: cadetblue;
+      }
+      #title {
+        background-color: darkcyan;
+        height: 50px;
+        text-align: center;
+        width: 100%;
+        /* display: flex; */
+      }
+      .btns input {
+        width: 50px;
+        text-align: center;
+        background-color: aliceblue;
+        border-radius: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide"></div>
+
+    <script>
+      var slide = document.getElementsByClassName("slide")[0];
+      slide.innerHTML = `<img src='https://i.gifer.com/1LBN.gif' alt='loading....'>`;
+
+      let speed = 6000;
+      let index = 0;
+      let interval;
+      let data, img, p_title;
+
+      var http = new XMLHttpRequest();
+      http.open("GET", "https://jsonplaceholder.typicode.com/albums/1/photos");
+
+      http.send();
+      http.onreadystatechange = function () {
+        if (http.readyState == 4 && http.status == 200) {
+          data = JSON.parse(http.responseText);
+          fetchData(data);
+        }
+      };
+
+      function changeSpeed(num) {
+        speed = num * 1000;
+        stop();
+        play();
+      }
+      function play() {
+        stop();
+        interval = setInterval(() => {
+          if (index < data.length) {
+            img.src = data[index].url;
+            console.log(img.src);
+            p_title.innerText = data[index].title;
+            console.log(p_title);
+            console.log(speed);
+            index++;
+          } else {
+            index = 0;
+          }
+        }, speed);
+      }
+      function stop() {
+        clearInterval(interval);
+      }
+      function previus() {
+        index -= 2;
+      }
+      function next() {
+        index += 2;
+      }
+
+      function fetchData(data) {
+        console.log(data);
+        content = `<img id="img" src="#" alt="img" />
+                  <h2 id="title">image</h2>
+                  <div class="btns">
+                    <input onclick='previus()' type="button" value="<<" />
+                    <input onclick='next()' type="button" value=">>" />
+                    <input onclick='stop()' type="button" value="stop" />
+                    <input onclick='play()' type="button" value="play" />
+                    <input onclick='changeSpeed(6)' type="button" value="1x6s" />
+                    <input onclick='changeSpeed(4)' type="button" value="1x4s" />
+                    <input onclick='changeSpeed(2)' type="button" value="1x2s" />
+                  </div>`;
+
+        slide.innerHTML = content;
+        img = document.getElementById("img");
+        console.log(img.src);
+        p_title = document.getElementById("title");
+        console.log(p_title);
+
+        // intialize
+        img.src = data[0].url;
+        p_title.innerText = data[0].title;
+        index = 1;
+
+        showSlides(img, p_title, data);
+      }
+
+      function showSlides(img, p_title, data) {
+        interval = setInterval(() => {
+          if (index < data.length) {
+            img.src = data[index].url;
+            console.log(img.src);
+            p_title.innerText = data[index].title;
+            console.log(p_title);
+            console.log(speed);
+            index++;
+          } else {
+            index = 0;
+          }
+        }, speed);
+      }
+    </script>
+  </body>
+</html>

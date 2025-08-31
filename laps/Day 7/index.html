@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(116, 158, 144);
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+      }
+      .login {
+        background-color: aliceblue;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        margin-right: 0px;
+
+        border-radius: 10px;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 5px;
+      }
+      .login input {
+        width: 80%;
+        height: 20px;
+        /* text-align: center; */
+        /* padding: 20px; */
+        margin: 5px;
+      }
+      #btn {
+        background-color: green;
+      }
+      #merge,
+      #add {
+        width: 50px;
+        height: 40px;
+        margin-right: 40%px;
+        background-color: rgb(242, 244, 109);
+        text-align: left;
+        align-items: left;
+        border-radius: 5px;
+      }
+      #h1 {
+        font-size: 20px;
+        font-weight: 200px;
+      }
+      #task,
+      #tasks,
+      .task-item {
+        width: 60%;
+        display: inline;
+        text-align: left;
+      }
+      .task-item {
+        background-color: rgb(190, 176, 156);
+      }
+      .task-name {
+        /* margin-right: 10%; */
+        margin-right: 50%;
+        font-size: 16px;
+        height: 20px;
+      }
+      .done {
+        background-color: green;
+      }
+      .delete {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <form action="">
+          <input
+            type="text"
+            placeholder="username"
+            name="name"
+            id="name"
+          /><br />
+          <input
+            type="password"
+            placeholder="password"
+            name="pass"
+            id="pass"
+          /><br />
+          <input type="submit" value="LOGIN" id="btn" />
+        </form>
+
+        <input
+          type="button"
+          value="merge arr"
+          id="merge"
+          onclick="mergeArr()"
+        />
+      </div>
+
+      <div class="login">
+        <div id="tasks"></div>
+        <div id="add_task">
+          <label for="task" class="h1">Task</label>
+          <!-- <h1>Task</h1> -->
+          <input placeholder="Task name" type="text" id="task" />
+          <input type="button" value="Add" id="add" onclick="addTask()" />
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

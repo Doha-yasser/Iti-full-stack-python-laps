@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>Welcome</h1>
+
+        <label for="name">Enter Your name:</label>
+        <input type="text" id="name" autofocus /><br /><br />
+
+        <label for="age">Enter Your age : </label>
+        <input type="Number" id="age" /><br /><br />
+
+        <label>Select Your gender:</label><br /><br />
+
+        <input type="radio" name="gender" id="male" value="male" />
+        <label for="male">
+        male
+        <img
+            src="../../../images/male.jpg"
+            alt="male img"
+            onclick="setImg(this)"
+            width="100px"
+            height="100px"
+        />
+        </label>
+
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="female">
+        female
+        <img
+            src="../../../images/female.jpg"
+            alt="female img"
+            onclick="setImg(this)"
+            width="100px"
+            height="100px"
+        />
+        </label>
+
+        <br /><br />
+
+        <label for="favColor">Select Your favourite color:</label>
+        <select name="favColor" id="favColor">
+        <option value="red">red</option>
+        <option value="white">white</option>
+        <option value="green">green</option>
+        <option value="yellow">yellow</option>
+        <option value="blue">blue</option>
+        </select>
+
+        <button class="btn" onclick="saveData()">Register</button>
+    
+        <script>
+            /**cookies library*/
+
+            // allCookiesList ----> dataSplit
+            let object = {};
+            
+            function getCookie(cookieName) {
+                dataSplit();
+                let value = object[cookieName];
+                console.log("value for " + cookieName + ": " + value)
+                return (value);
+            }
+
+
+            function setCookie(cookieName, cookieValue, expiryDate) {
+                let cookieString = `${cookieName}=${cookieValue}`;
+
+                if (expiryDate) {
+                    // let date = new Date();
+                    // date = date.setMonth(date.getMonth() + 1);
+                    cookieString += `;expires = ${expiryDate.toUTCString()}`;
+                }
+                
+                document.cookie = cookieString;
+                console.log(document.cookie);
+            }
+
+
+            function deleteCookie(cookieName) {
+                if (hasCookie(cookieName) == 'cookie is not exists') {
+                    console.log("Can not delete")
+                    return;
+                }
+
+                console.log('Before delete');
+                dataSplit();
+                let date = new Date();
+
+                date.setMonth(date.getMonth() - 1);
+                document.cookie = cookieName+`=;expires=${date.toUTCString()}` 
+                
+            }
+
+
+            function hasCookie(cookieName) {
+                console.log('all cookies');
+
+                if (cookieName in dataSplit()) {
+                    return('cookie exists')
+                }
+                else {
+                    return('cookie is not exists')
+                }
+            }
+
+
+            function saveData() {
+                    
+                document.getElementsByClassName('btn')[0].onclick = function () {
+                    window.alert("Saved")
+
+                    var userName = document.getElementById('name').value
+                    var userAge = document.getElementById('age').value
+                    var userGender = document.querySelector('input[name="gender"]:checked').value
+                    var favouriteColor = document.getElementById('favColor').value
+
+
+                    document.cookie = `name=${userName}`;
+                    document.cookie = `age=${userAge}`;
+                    document.cookie = `gender=${userGender}`;
+                    document.cookie = `favouriteColor=${favouriteColor}`;
+
+                    dataSplit();
+                }
+            }
+
+
+            function dataSplit() {  // all list
+                let data = document.cookie.split('; ');
+            
+                data.forEach(data => {
+                    let [key, val] = data.split('=');
+                    object[key] = val;
+                }) 
+                
+                console.log(object);
+                return object;
+            }
+
+        </script>
+    </body>
+</html>

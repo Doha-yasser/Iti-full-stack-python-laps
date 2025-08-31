@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Differnce between em and rem</title>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      :root {
+        font-size: 16px;
+      }
+      .parent {
+        font-size: 25px;
+      }
+      .ems li {
+        font-size: 2em; /* parent 20 so 2 rem = 40*/
+      }
+
+      .rems li {
+        font-size: 2rem; /* root 10 so 2 rem = 20*/
+      }
+
+      /* ************** */
+
+      .none-bullet-list {
+        list-style-type: none;
+      }
+      .none-bullet-list li:hover {
+        color: red;
+        background-color: pink;
+      }
+
+      #aboutus {
+        background-color:rgb(48, 45, 45) ;
+        color: rgb(128, 219, 247)    !important;
+      }
+
+      /* the second one applied (rewite) */
+      #aboutus{
+        color: rgb(128, 247, 150);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="parent" >
+      <ul class="ems">
+        <li>One</li>
+        <li>Two</li>
+      </ul>
+
+      <ul class="rems">
+        <li>One</li>
+        <li>Two</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="div">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veniam
+        quam eaque accusantium? Corporis nostrum ipsum molestias aut?
+        Exercitationem cupiditate amet animi, corrupti tempora autem a incidunt
+        vero perferendis nostrum.
+      </div>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, labore?
+      </p>
+      <span id="aboutus">
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia,
+        labore?
+    </span>
+      <h1>This is H1 tag</h1>
+    </div>
+
+    <div id="header">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque adipisci
+      asperiores voluptate aliquam molestias nostrum repudiandae dicta officia?
+      Aut libero earum quia omnis ad nemo. Iste quasi quia veniam itaque?
+    </div>
+    <span class="linksbar">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque adipisci
+      asperiores voluptate aliquam molestias nostrum repudiandae dicta officia?
+      Aut libero earum quia omnis ad nemo. Iste quasi quia veniam itaque?
+
+      <a href="#">link</a>
+      <ul class="none-bullet-list">
+        <li>list item</li>
+        <li><a href="#">link</a></li>
+      </ul>
+    </span>
+
+    <span class="content">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque adipisci
+      asperiores voluptate aliquam molestias nostrum repudiandae dicta officia?
+      Aut libero earum quia omnis ad nemo. Iste quasi quia veniam itaque?
+
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, minima.</h2>
+    </span>
+
+
+
+  </body>
+</html>

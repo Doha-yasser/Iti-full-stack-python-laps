@@ -1,0 +1,83 @@
+div , span , p{
+    font-family: " Lucida Calligraphy";
+}
+
+
+div h1{
+    text-align: center;        /*center vertically*/
+    /* justify-items:center; center horizontal */
+}
+
+#header{
+    display:inline;
+    width:100%;
+    height: 60px;
+    background-color: red;
+}
+
+.linksbar{
+    display:inline;
+    width:25%;
+    background-color: gray;
+    float: left;
+}
+
+.linksbar a {
+    color:red;
+    background-color: pink;
+    text-decoration: none;
+}
+
+
+
+.linksbar li{
+    list-style-type: none;
+}
+
+.content{
+    /* display:inline-block; */
+    width:75%;
+    height:70%;
+    background-color:pink;
+    float:left;
+}
+
+.content > h2{
+    font-size: 12px;
+    font-weight:bold;
+}
+
+
+.p_header{
+    text-align: center;
+    background-color: red;
+
+}
+
+
+
+/* .linksbar {
+    display: inline;
+    width: 25%;
+    background-color: gray;
+    float: left;
+} */
+
+div > form{
+    border: 2px dashed black;
+}
+
+
+table , .table{
+    border: black solid 2px;
+}
+
+
+input:focus{
+    background-color: rgb(231, 231, 116);
+}
+
+.div::after{
+    content: 'Read this';
+    color: rgb(227, 227, 6);
+}

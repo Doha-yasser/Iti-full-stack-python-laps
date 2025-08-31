@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+
+  <body>
+    <h1>Task 5</h1>
+    <script>
+      // Q1
+      // num = +prompt('Enter a number: ');
+      // if(num > 0){
+      //   console.log("positive number")
+      // }
+      // else if(num < 0){
+      //   console.log("negative number")
+      // }
+      // else if(num === 0){
+      //   console.log("the number is Zero")
+      // }
+      // else{
+      //   console.log('not a number')
+      // }
+
+      // // Q2
+      // choice = confirm('Do you want to proceed?');
+      // if(choice){
+      //   alert('You chose to proceed')
+      // }
+      // else{
+      //   alert('Action canceled.')
+      // }
+
+      // // Q3
+      // var n = 10;
+      // console.log(n % 2 === 0 ? "hi" : "heloo");
+
+      // // Q4
+      // do {
+      //   age = prompt("Enter your age: ");
+      //   if(isFinite(age) && age.trim() !== "" && age > 0){
+      //     if(age >= 1 && age <= 10){
+      //       alert('you are Child')
+      //     }
+      //     else if(age >= 11 && age <= 18){
+      //       alert('you are Teenager')
+      //     }
+      //     else if(age >= 19 && age <= 50){
+      //       alert('you are Grown up')
+      //     }
+      //     else if(age > 50){
+      //       alert('you are Old')
+      //     }
+      //   }
+      //   else{
+      //     alert('this is not valid')
+      //     continue;
+      //   }
+
+      //   check = confirm('Do you want to enter another age')
+      // } while (check);
+
+      // Q5
+      // vowels = ["a", "e", "o", "i", "u"];
+      // counters = [0, 0, 0, 0, 0];
+      // str = prompt("enter a string : ");
+      // for (let i = 0; i < str.length; i++) {
+      //   for (let j = 0; j < 5; j++) {
+      //     if (str[i] == vowels[j]) {
+      //       counters[j]++;
+      //       console.log("done");
+      //     }
+      //   }
+      // }
+
+      // document.write(
+      //   `string: ${str} \n\na = ${counters[0]} , e = ${counters[1]} , 0 = ${counters[2]} , i = ${counters[3]} , u = ${counters[4]}`
+      // );
+
+      // Q6
+      // hour = parseInt(prompt("Enter the hour: "));
+      // if (hour == 0) {
+      //   alert("12 AM ");
+      // } else if (hour < 12) {
+      //   alert(hour + " AM ");
+      // } else {
+      //   alert(hour - 12 + " PM ");
+      // }
+
+      // Q7
+      // s = prompt("Enter the string");
+      // alert(s.charAt(0).toUpperCase() + s.slice(1).toLowerCase());
+
+      // Q8
+
+      // while (true) {
+      //   color = prompt("type your favorite color");
+      //   check = confirm(`You chose ${color}. Is that correct?`);
+      //   if (check) {
+      //     alert("Great choice!");
+      //     break;
+      //   }
+      //   else {
+      //     alert("Let's try again.");
+      //   }
+      // }
+
+      // Q9
+      // password = "12345";
+      // do {
+      //   check = prompt("Enter a password: ");
+      // } while (!(password == check));
+
+      // Q10
+      // date1 = new Date();
+      // date1.setMonth(date1.getMonth());
+
+      // date2 = new Date();
+      // date2.setMonth(date2.getMonth() + 1);
+
+      // console.log(date1 < date2 ? "date 1 is earier" : "date 2 is earier");
+
+      // Q11
+      day1 = 12;
+      day2 = 20;
+      console.log(`${day2 - day1} days`);
+
+      // Q12
+      sum = 0;
+      for (let i = 0; i <= 100; i += 2) {
+        sum += i;
+      }
+      console.log(sum);
+
+      // Q13
+      str = "Hello World!";
+      word = str.slice(-6);
+      console.log(word);
+
+      // Q14
+      number =  5.678
+      console.log(number.toFixed(2))
+
+
+      // Q15
+      x = prompt('Enter a number: ')
+      alert(x % 3 == 0 && x % 5 == 0) ? true : false ;
+    </script>
+  </body>
+</html>

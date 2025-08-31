@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .table {
+        border: 2px black solid;
+      }
+      body {
+        /* border: black 2px solid; */
+        background: lightcyan;
+      }
+      .leftside{
+        width: 25%;
+        float: left;
+        border: black 2px dotted;
+        margin: 10px;
+      }
+      .leftside a{
+        text-align: center;
+        justify-content: center;
+        margin: 20 auto;
+        /* padding:25%; */
+      }
+      .centered{
+        /* text-align: center; */
+        width: 50%;
+        margin: 10px auto;
+      }
+      .nav, .footer{
+        width: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(115, 183, 202);
+        overflow: auto;
+        padding: 10px;
+        /* color: white; */
+      }
+
+      .nav td{
+        padding:10px;
+      }
+      .rightside{
+        display: inline-flex;
+        width: 25%;
+        text-align: right;
+        justify-content: center;
+        float:right;
+        border: dotted black 2px;
+        margin-bottom: 50px;
+      }
+      .rightside p{
+        text-align: center;
+      }
+      .rightside img{
+        height: 200px;
+        width: 200px;
+      }
+
+      table tr{
+        text-align:center;
+        border: black 2px dotted;
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <nav class="nav">
+      <table >
+        <th ><nav>logo</nav></th>
+        <tr>
+          <td >
+            <a href="home.html">Home</a>
+            <a href="../../Day 1/html files/home.html">contact us</a>
+            <a href="../../Day 1/html files/home.html">About</a>
+          </td>
+        </tr>
+      </table>
+    </nav>
+    
+    
+
+    <div class="leftside">
+      <form action="">
+        <table class="leftside">
+          <tr>
+            <td><label for="name">User name:</label></td>
+            <td><input type="text" id="name" accesskey="u" /></td>
+          </tr>
+          <tr>
+            <td><label for="password">password:</label></td>
+            <td><input type="password" id="password" accesskey="p" /></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="remember me" id="remember" /></td>
+            <td><label for="remember me">remember me</label></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="Log in" /></td>
+          </tr>
+        </table>
+
+        <table >
+          <tr> <td>My Pages online </td></tr>
+          <tr> <td><a href="https://www.facebook.com/"><img src="../../../images/facebook.jpg" alt="facebook"></a></td></tr>
+          <tr> <td><a href="#"><img src="../../../images/twitter.jpg" alt="twitter"></a></td></tr>
+          
+          <tr><td>
+            <iframe src="../../Day 1/html files/bonus.html" frameborder="0" width="100%" 
+              height="300" 
+              style="border: 1px solid black;" 
+              scrolling="auto">>
+            </iframe></td></tr>
+        </table>
+        
+    </div>
+
+    <div class="centered">
+      <h3 style="text-align:center">My personal info</h3>
+        <ul>
+            <li> Age: 21</li>
+            <li> Address: Wardan Giza </li>
+            <li> Phones: 
+                <ol type="a">
+                    <li>01283039594</li>
+                    <li>01283039594</li>
+                </ol>
+             </li>
+             <li> <a href="http://193.227.14.58/#/" target="_blanck">Faculty of Computer And AI Cairo University</a></li>
+             <li>Graduation year : 2027</li>
+             <li>Hobbies: 
+                <ol>
+                    <li>Reading</li>
+                    <li>Watch moives</li>
+                </ol>
+             </li>
+             
+             <li><a href="mailto:dohayasser1122@gmail.com">Send me Email</a></li>
+             <li>About me: 
+                <pre>Iam a third student And Passionate about web development</pre>  </li>
+
+        </ul>
+    </div>
+
+    <div class="rightside">
+      <table>
+        <tr><td><img src="../../../images/myImg.jpg" alt="profile"></td></tr>
+        <tr><td><p>News:</p></td></tr>
+      </table>  
+    </div>
+
+
+    
+
+    <footer class="footer">
+      <a href="#top">Top page</a><br><br>
+      <p>Copyrights &copy; are reserved to ITI.</p>
+    </footer>
+
+  </body>
+</html>
